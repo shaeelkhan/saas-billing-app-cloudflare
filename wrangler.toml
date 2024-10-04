@@ -1,0 +1,35 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "saas-billing-app"
+main = "src/index.ts"
+type = "typescript"    
+compatibility_date = "2024-09-25"
+compatibility_flags = ["nodejs_compat"]
+
+# Add youe kv_namespaces here
+
+[[kv_namespaces]]
+binding = "KV_CUSTOMERS"
+id = "add_your_kv_namespace_id"
+
+[[kv_namespaces]]
+binding = "KV_SUBSCRIPTION_PLANS"
+id = "add_your_kv_namespace_id"
+
+[[kv_namespaces]]
+binding = "KV_INVOICES"
+id = "add_your_kv_namespace_id" 
+
+[[kv_namespaces]]
+binding = "KV_PAYMENTS"
+id = "add_your_kv_namespace_id" 
+
+[triggers]
+crons = ["0 0 * * *"]
+
+[vars]
+SENDGRID_API_KEY = "add_your_sendgrid_api_key"
+
+
+
+
+
